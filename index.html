@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+        }
+
+        .form-section {
+            padding: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .forgot-password a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .toggle-text {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .toggle-text a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .toggle-text a:hover {
+            text-decoration: underline;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            overflow: hidden;
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            transform: translateY(0);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .form-section {
+            padding: 1rem;
+            opacity: 1;
+            transition: all 0.5s ease;
+            transform: translateX(0);
+        }
+
+        .form-section.hidden {
+            opacity: 0;
+            transform: translateX(100%);
+            position: absolute;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2em;
+            background: linear-gradient(45deg, #ee7752, #e73c7e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        input:focus {
+            border-color: #23a6d5;
+            box-shadow: 0 0 15px rgba(35, 166, 213, 0.3);
+        }
+
+        input:focus+i {
+            color: #23a6d5;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 300% 300%;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: gradient 15s ease infinite;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: gradient 3s ease infinite;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .forgot-password a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: #23a6d5;
+        }
+
+        .toggle-text {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .toggle-text a {
+            color: #23a6d5;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .toggle-text a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(to right, #23a6d5, #23d5ab);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-text a:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.75em;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login & Sign Up</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="forms-container">
+                <!-- Login Form -->
+                <div class="form-section login">
+                    <h2>Welcome Back!</h2>
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="loginEmail" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="Password" required>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button onsubmit="return false" type="submit" class="btn">Login</button>
+                    </form>
+                    <p class="toggle-text">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div class="form-section signup hidden">
+                    <h2>Create Account</h2>
+                    <form id="signupForm">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="signupName" placeholder="Full Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="signupEmail" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="signupPassword" placeholder="Password" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        </div>
+                        <button type="submit" class="btn">Sign Up</button>
+                    </form>
+                    <p class="toggle-text">Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get DOM elements
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const showSignupLink = document.getElementById('showSignup');
+            const showLoginLink = document.getElementById('showLogin');
+            const loginSection = document.querySelector('.login');
+            const signupSection = document.querySelector('.signup');
+
+            // Toggle between login and signup forms
+            showSignupLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginSection.classList.add('hidden');
+                signupSection.classList.remove('hidden');
+            });
+
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupSection.classList.add('hidden');
+                loginSection.classList.remove('hidden');
+            });
+
+            // Handle login form submission
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+
+                // Add your login logic here
+                console.log('Login attempt:', { email, password });
+            });
+
+            // Handle signup form submission
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('signupName').value;
+                const email = document.getElementById('signupEmail').value;
+                const password = document.getElementById('signupPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+
+                // Add your signup logic here
+                console.log('Signup attempt:', { name, email, password });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get DOM elements
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const showSignupLink = document.getElementById('showSignup');
+            const showLoginLink = document.getElementById('showLogin');
+            const loginSection = document.querySelector('.login');
+            const signupSection = document.querySelector('.signup');
+            const inputs = document.querySelectorAll('input');
+
+            // Add floating label effect
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('focused');
+                });
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        input.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+
+            // Smooth transition between forms
+            const switchForms = (from, to) => {
+                from.style.animation = 'slideOut 0.5s forwards';
+                setTimeout(() => {
+                    from.classList.add('hidden');
+                    to.classList.remove('hidden');
+                    to.style.animation = 'slideIn 0.5s forwards';
+                }, 500);
+            };
+
+            showSignupLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForms(loginSection, signupSection);
+            });
+
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchForms(signupSection, loginSection);
+            });
+
+            // Add form validation and submission handling
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('loginEmail');
+                const password = document.getElementById('loginPassword');
+
+                // Simple validation with visual feedback
+                if (!validateEmail(email.value)) {
+                    showError(email, 'Please enter a valid email');
+                    return;
+                }
+                if (password.value.length < 6) {
+                    showError(password, 'Password must be at least 6 characters');
+                    return;
+                }
+
+                // Simulate login - replace with your actual login logic
+                simulateSubmission('Logging in...');
+            });
+
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('signupName');
+                const email = document.getElementById('signupEmail');
+                const password = document.getElementById('signupPassword');
+                const confirmPassword = document.getElementById('confirmPassword');
+
+                // Validation
+                if (name.value.length < 2) {
+                    showError(name, 'Name must be at least 2 characters');
+                    return;
+                }
+                if (!validateEmail(email.value)) {
+                    showError(email, 'Please enter a valid email');
+                    return;
+                }
+                if (password.value.length < 6) {
+                    showError(password, 'Password must be at least 6 characters');
+                    return;
+                }
+                if (password.value !== confirmPassword.value) {
+                    showError(confirmPassword, 'Passwords do not match');
+                    return;
+                }
+
+                // Simulate signup - replace with your actual signup logic
+                simulateSubmission('Creating your account...');
+            });
+
+            // Helper functions
+            function validateEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function showError(input, message) {
+                const formGroup = input.parentElement;
+                formGroup.classList.add('error');
+
+                // Create error message if it doesn't exist
+                let errorMessage = formGroup.querySelector('.error-message');
+                if (!errorMessage) {
+                    errorMessage = document.createElement('div');
+                    errorMessage.className = 'error-message';
+                    formGroup.appendChild(errorMessage);
+                }
+                errorMessage.textContent = message;
+
+                // Remove error after 3 seconds
+                setTimeout(() => {
+                    formGroup.classList.remove('error');
+                    errorMessage.remove();
+                }, 3000);
+            }
+
+            function simulateSubmission(message) {
+                const btn = event.submitter;
+                const originalText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = message;
+
+                // Simulate API call
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                    // Add your success logic here
+                }, 2000);
+            }
+        });
+
+        // Add these keyframe animations to your CSS
+        document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                @keyframes slideOut {
+                    0% { transform: translateX(0); opacity: 1; }
+                    100% { transform: translateX(-100%); opacity: 0; }
+                }
+
+                @keyframes slideIn {
+                    0% { transform: translateX(100%); opacity: 0; }
+                    100% { transform: translateX(0); opacity: 1; }
+                }
+
+                .error-message {
+                    color: #e73c7e;
+                    font-size: 0.8em;
+                    margin-top: 5px;
+                    margin-left: 15px;
+                    animation: fadeIn 0.3s ease;
+                }
+
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(-10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+
+                .input-group.error input {
+                    border-color: #e73c7e;
+                }
+            </style>
+        `);
+
+
+
+    </script>
+</body>
+
+</html>
